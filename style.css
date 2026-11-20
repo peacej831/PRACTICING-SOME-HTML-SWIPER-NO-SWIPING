@@ -1,0 +1,72 @@
+main {
+	width: 95%;
+	margin: 0 auto;
+}
+
+/* Base (mobile view): one column, full width */
+.column {
+	width: 96%;
+	display: inline-block;
+	float: left;
+	margin-left: 2%;
+	margin-bottom: 20px;
+}
+
+.column img {
+	width: 100%;
+	height: auto;
+}
+
+html, body {
+	background-color: red;   /* small screens: red */
+}
+
+body {
+	margin: 0;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 13px;
+	font-weight: normal;
+	color: #404040;
+}
+
+h1 {
+	font-size: 300%;
+	margin: 0;
+	padding: 0;
+}
+
+h1, h2 {
+	text-align: center;
+	text-transform: uppercase;
+}
+
+/* Query #1: Tablet View */
+@media screen and (min-width: 772px) {
+	html, body {
+		background-color: blue;   /* medium screens: blue */
+	}
+
+	.column {
+		width: 45%;          /* divs are 45% of viewport width */
+		margin-left: 2%;     /* 45% + 2% margin x2 = 94%, so two columns fit per row */
+	}
+
+	.column img {
+		width: auto;         /* stop stretching to the full width of the div */
+		max-width: 100%;
+		max-height: 30vh;    /* images no more than 30% of viewport height */
+		display: block;
+		margin: 0 auto;
+	}
+}
+
+/* Query #2: Large Screen View */
+@media screen and (min-width: 998px) {
+	html, body {
+		background-color: green;  /* large screens: green */
+	}
+
+	.column {
+		width: 30%;          /* divs are 30% of viewport width */
+	}
+}
